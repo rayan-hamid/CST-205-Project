@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Earth Matters
+    </title>
+</head>
+
+<body>
+    <h1>
+        <img style="width: 200px; height: 200px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Kawaii_earth_clipart.svg/1024px-Kawaii_earth_clipart.svg.png">
+        <span style="font-family: Arial; display: block; text-align: center; font-size: 150%; -webkit-text-stroke: 2px green; color: black;">Earth Matters</span>
+    </h1>
+    <h2 style="font-family: Arial;text-align: center;"> The site answering all your questions on climate change.</h2>
+    <h2 style="font-family: Arial;text-align: center;"> The current temperature in Seaside, CA is {{temperature}} degrees.</h2>
+    <hr>
+    <!-- nav bar -->
+     <div style="background-color: rgba(168, 168, 168, 0.295);">
+        <h1 style="font-family: Arial; text-align: center;">Navigation Menu</h1>
+     <div style="text-align: center;">
+        <a href="{{url_for('causes')}}">
+            <span style="font-family: Arial; font-size: 150%; -webkit-text-stroke: 1px green; color: black; margin-right: 20px;">Causes</span>
+        </a>
+        <a href="{{url_for('effects')}}">
+            <span style="font-family: Arial; font-size: 150%; color: blue; margin-right: 20px;">Effects</span>
+        </a>
+        <a href="{{url_for('solutions')}}">
+            <span style="font-family: Arial; font-size: 150%; color: rgb(0, 148, 32);margin-right: 20px;">Solutions</span>
+        </a>
+        <a href="{{url_for('resources')}}">
+            <span style="font-family: Arial; font-size: 150%; color: rgb(0, 155, 167);">Resources</span>
+        </a>
+        <img src="https://static.israel21c.org/www/uploads/2019/01/shutterstock_globalwarming-1520x855.jpg">
+         <hr>
+      </div>
+     </div>
+     <!-- insert quote that changes -->
+     <div>
+        <p style="font-family: Arial;">{{quote}}</p>
+     </div>
+     <hr>
+
+      
+</body>
+</html>
