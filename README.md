@@ -20,7 +20,7 @@ This project is a comprehensive web application developed in Flask, aimed at rai
 
 # How to Run the Program:
 1. git clone <[GitHub repository URL](https://github.com/rayan-hamid/CST-205-Project.git)>
- - cd <CST-205-Project>
+ - cd CST-205-Project
 2. Activate your virtual environment: source cst205env/bin/activate
 3. Install dependencies:
 - pip install Flask
