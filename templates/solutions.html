@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions to Climate Change</title>
+</head>
+<body>
+    
+    <!-- earth icon -->
+    <div style="position: absolute; top: 0; right: 0;">
+        <img src="{{ url_for('static', filename='images/' + main_icon + '.png') }}" style="width: 150px; height: auto;">
+    </div>
+
+    <div style="text-align: center;" style="margin-top: 50px; font-family: Arial, sans-serif;">
+        <h1 style="color: #3f783f;">Solutions</h1>
+
+        <!-- add link for homepage -->
+        <a href="/">
+            <button style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 100px; cursor: pointer; margin-top: 40px;">
+                Go to Home Page
+            </button>
+        </a>
+    
+    </div>
+
+
+    
+    <hr style="border: 0.5px solid black; margin: 20px 0;">
+
+ <!-- content for the solutions with heading, explanation and image icon -->
+    <div style="margin-top: 50px; margin-left: 20px; margin-left: 20px; margin-right: 50px;font-family: Arial, sans-serif; display: flex; align-items: center;">
+        <img src="{{ url_for('static', filename='images/' + house_icon + '.png') }}" style="width: 80px; height: auto; margin-right: 20px;">
+        
+        <div>
+            <h2 style="margin: 0;">Cut Back on Energy at Home</h2>
+
+            <p style="margin-top: 10px; margin-bottom: 0;">
+                We rely a lot on coal, oil, and gas for electricity, but you can help reduce that impact by lowering your heating or cooling, 
+                switching to energy-saving bulbs, and opting for energy-efficient appliances. Little changes like washing your clothes in 
+                cold water or air-drying them can make a huge difference!
+            </p>
+
+        </div>
+    </div>
+
+    <div style="margin-top: 50px; margin-left: 20px; font-family: Arial, sans-serif; display: flex; align-items: center; margin-right: 50px;">
+        <img src="{{ url_for('static', filename='images/' + bike_icon + '.png') }}" style="width: 80px; height: auto; margin-right: 20px;">
+        <div>
+            <h2 style="margin: 0;">Ditch the Car When You Can</h2>
+            <p style="margin-top: 10px; margin-bottom: 0;">
+                Cars are a big source of pollution. Walk, bike, or take public transport instead. Not only is it better for the planet, but it's also great for your health. 
+                If you need to travel long distances, trains or buses are a solid option, and carpooling is always a smart move.
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 50px; margin-left: 20px; font-family: Arial, sans-serif; display: flex; align-items: center;margin-right: 50px;">
+        <img src="{{ url_for('static', filename='images/' + food_icon + '.png') }}" style="width: 80px; height: auto; margin-right: 20px;">
+        <div>
+            <h2 style="margin: 0;">More Veggies, Less Meat</h2>
+            <p style="margin-top: 10px; margin-bottom: 0;">
+                Eating more plant-based foods can drastically cut down on your carbon footprint. 
+                Plant-based meals use fewer resources to produce and release fewer greenhouse gases. 
+                So, next time you're meal prepping, throw in some extra veggies!
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 50px; margin-left: 20px; font-family: Arial, sans-serif; display: flex; align-items: center; margin-right: 50px;">
+        <img src="{{ url_for('static', filename='images/' + travel_icon + '.png') }}" style="width: 80px; height: auto; margin-right: 20px;">
+        <div>
+            <h2 style="margin: 0;">Travel Smarter</h2>
+            <p style="margin-top: 10px; margin-bottom: 0;">
+                Air travel uses up a lot of fossil fuels, so think twice before booking a flight. 
+                If possible, consider taking a train or carpooling. 
+                Or better yet, meet virtually! If you do need to travel, maybe save flights for the really important trips.
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 50px; margin-left: 20px; font-family: Arial, sans-serif; display: flex; align-items: center;margin-right: 50px;">
+        <img src="{{ url_for('static', filename='images/' + food_icon + '.png') }}" style="width: 80px; height: auto; margin-right: 20px;">
+        <div>
+            <h2 style="margin: 0;">Cut Down on Food Waste</h2>
+            <p style="margin-top: 10px; margin-bottom: 0;">
+                Throwing food away wastes the resources and energy used to produce it. 
+                Plus, when food rots, it creates harmful gases. 
+                To reduce waste, try planning your meals, eating leftovers, and composting whatever’s left.
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 50px; margin-left: 20px; font-family: Arial, sans-serif; display: flex; align-items: center;margin-right: 50px";>
+        <img src="{{ url_for('static', filename='images/' + rrr_icon + '.png') }}" style="width: 80px; height: auto; margin-right: 20px;">
+        <div>
+            <h2 style="margin: 0;">Reduce, Reuse, Repair & Recycle</h2>
+            <p style="margin-top: 10px; margin-bottom: 0;">
+                Everything we buy—from electronics to clothes—creates carbon emissions. 
+                Instead of buying brand new all the time, try fixing or reusing things. 
+                And remember to recycle when you can. 
+                Every little bit helps.
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 50px; margin-left: 20px; font-family: Arial, sans-serif; display: flex; align-items: center;margin-right: 50px;">
+        <img src="{{ url_for('static', filename='images/' + solar_icon + '.png') }}" style="width: 80px; height: auto; margin-right: 20px;">
+        <div>
+            <h2 style="margin: 0;">Go Green with Your Energy</h2>
+            <p style="margin-top: 10px; margin-bottom: 0;">
+                If your home energy comes from non-renewable sources like oil or coal, consider switching to solar or wind power. 
+                Check if your utility company offers renewable energy plans and make the change for a cleaner, greener future.
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 50px; margin-left: 20px; font-family: Arial, sans-serif; display: flex; align-items: center;margin-right: 50px;">
+        <img src="{{ url_for('static', filename='images/' + ev_icon + '.png') }}" style="width: 80px; height: auto; margin-right: 20px;">
+        <div>
+            <h2 style="margin: 0;">Switch to an Electric Vehicle</h2>
+            <p style="margin-top: 10px; margin-bottom: 0;">
+                If you’re in the market for a new car, why not go electric?
+                Electric vehicles reduce pollution and are much better for the environment compared to traditional gas-powered cars. 
+                And now, they’re more affordable than ever with serval options!
+            </p>
+        </div>
+    </div>
+
+
+    <!-- button for test your knowledge stuff -->
+    <div style="margin-top: 30px; text-align: center;">
+    <a href="/test-your-knowledge">
+        <button style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 100px; cursor: pointer;">
+            Test your Knowledge
+        </button>
+    </a>
+    </div>
+
+    <hr style="border: 0.5px solid black; margin: 20px 0;">
+
+    <!-- citing my sources -->
+    <div style="margin-top: 30px; text-align: center; font-family: Arial; margin-bottom: 30px;">
+        <b>Citation</b>
+        <p>“Actions for a Healthy Planet.” United Nations, United Nations, www.un.org/en/actnow/ten-actions#unplug. Accessed 30 Nov. 2024. </p>
+    </div>
+</body>
+</html>
