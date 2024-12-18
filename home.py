@@ -3,6 +3,9 @@ import random
 #API STUFF
 import openmeteo_requests
 from openmeteo_sdk.Variable import Variable
+from flask_wtf import FlaskForm
+from wtforms import RadioField, SubmitField
+from wtforms.validators import InputRequired
 
 om = openmeteo_requests.Client()
 params = {
@@ -17,6 +20,7 @@ response = responses[0]
 print(f"Coordinates {response.Latitude()}°N {response.Longitude()}°E")
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'csumb-otter'
 quotes = ('"The world will not be destroyed by those who do evil, but by those who watch them without doing anything" - Albert Einstein',
           '"We are the first generation to feel the impact of climate change and the last generation that can do something about it" - Barack Obama',
           '"As consumers we have so much power to change the world by just being careful in what we buy" - Emma Watson',
@@ -68,3 +72,55 @@ def solutions():
 @app.route('/resources')
 def resources():
     return render_template('resources.html')
+
+# QuizForm Definition
+class QuizForm(FlaskForm):
+    question_1 = RadioField('What is the main cause of climate change?', choices=[
+        ('Deforestation', 'Deforestation'),
+        ('Carbon emissions', 'Carbon emissions'),
+        ('Recycling', 'Recycling'),
+        ('Solar power', 'Solar power')
+    ], validators=[InputRequired()])
+
+    question_2 = RadioField('What is the greenhouse effect?', choices=[
+        ('A way to grow plants', 'A way to grow plants'),
+        ('Warming of Earth due to trapped gases', 'Warming of Earth due to trapped gases'),
+        ('A type of pollution', 'A type of pollution'),
+        ('None of the above', 'None of the above')
+    ], validators=[InputRequired()])
+
+    question_3 = RadioField('What can help reduce carbon emissions?', choices=[
+        ('Driving a car', 'Driving a car'),
+        ('Using public transportation', 'Using public transportation'),
+        ('Using more plastic', 'Using more plastic'),
+        ('Burning fossil fuels', 'Burning fossil fuels')
+    ], validators=[InputRequired()])
+
+    question_4 = RadioField('Recycling alone is enough to solve the climate crisis.', choices=[
+        ('True', 'True'),
+        ('False', 'False')
+    ], validators=[InputRequired()])
+
+    question_5 = RadioField('Which of the following is a sustainable way to reduce waste?', choices=[
+        ('Throwing everything in the trash', 'Throwing everything in the trash'),
+        ('Composting food scraps', 'Composting food scraps'),
+        ('Burning trash to reduce volume', 'Burning trash to reduce volume'),
+        ('Buying more plastic products', 'Buying more plastic products')
+    ], validators=[InputRequired()])
+
+    submit = SubmitField('Submit')
+
+@app.route('/test-your-knowledge', methods=['GET', 'POST'])
+def quiz():
+    form = QuizForm()
+    if form.validate_on_submit():
+        user_responses = {
+            'question_1': form.question_1.data,
+            'question_2': form.question_2.data,
+            'question_3': form.question_3.data,
+            'question_4': form.question_4.data,
+            'question_5': form.question_5.data
+        }
+        responses.append(user_responses)
+        return redirect('/submit')
+    return render_template('test_your_knowledge.html', form=form)
