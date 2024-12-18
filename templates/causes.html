@@ -6,8 +6,31 @@
 
     <title>Document</title>
 </head>
+<!-- nav bar -->
+<div style="background-color: rgba(168, 168, 168, 0.295);">
+    <h1 style="font-family: Arial; text-align: center;">Navigation Menu</h1>
+    <div style="text-align: center;">
+        <a href="{{ url_for('home') }}">
+            <span style="font-family: Arial; font-size: 150%; color: black; margin-right: 20px;">Home</span>
+        </a>
+        <a href="{{ url_for('causes') }}">
+            <span style="font-family: Arial; font-size: 150%; -webkit-text-stroke: 1px green; color: black; margin-right: 20px;">Causes</span>
+        </a>
+        <a href="{{ url_for('effects') }}">
+            <span style="font-family: Arial; font-size: 150%; color: blue; margin-right: 20px;">Effects</span>
+        </a>
+        <a href="{{ url_for('solutions') }}">
+            <span style="font-family: Arial; font-size: 150%; color: rgb(0, 148, 32); margin-right: 20px;">Solutions</span>
+        </a>
+        <a href="{{ url_for('resources') }}">
+            <span style="font-family: Arial; font-size: 150%; color: rgb(0, 155, 167);">Resources</span>
+        </a>
+    </div>
+    <hr>
+</div>
+
 <body>
-    Hello, this is the causes page
+
 </body>
 </html>
 
