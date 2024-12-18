@@ -131,6 +131,11 @@ def causes():
 def effects():
     return render_template('effects.html')
 
+@app.route('/carbon')
+def carbon():
+    return render_template('carbon.html')
+
+
 @app.route('/solutions')
 def solutions():
     main_icon = 'main_icon'
