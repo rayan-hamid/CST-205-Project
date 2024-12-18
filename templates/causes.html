@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
 </head>
 <body>
     Hello, this is the causes page
+</body>
+</html>
+
+    <title>Causes of Climate Change</title>
+</head>
+<body style="background-color: #f0f8ff;  text-align: center;">
+    <h1 style="background-color: #268ee2; color: rgb(22, 21, 21); ">Causes of Climate Change</h1>
+
+    <!-- List of Causes -->
+    {% for cause in causes %}
+    <div style="background-color: #ffffff; ">
+        <img src="{{ url_for('static', filename='images/' + cause.image) }}" alt="{{ cause.name }}" style="width: 500px; height: 250px;">
+        <p>
+            <a href="/causes?cause_id={{ cause.id }}" style="color: black;">{{ cause.name }}</a>
+        </p>
+        <p>{{ cause.description }}</p>
+    </div>
+    {% endfor %}
+
+    <!-- Detailed View -->
+    {% if selected_cause %}
+    <div style="background-color: #268ee2; ">
+        <h2>{{ selected_cause.name }}</h2>
+        <img src="{{ url_for('static', filename='images/' + selected_cause.detail_image) }}" alt="{{ selected_cause.name }}" style="width: 500px; height: 300px;">
+        <p>{{ selected_cause.description }}</p>
+
+        <h3>Background History</h3>
+        <p>{{ selected_cause.history }}</p>
+
+        <h3>How It Affects the Planet</h3>
+        <p>{{ selected_cause.effects }}</p>
+
+        <!-- Location Form -->
+        <form method="POST" style="margin-top: 20px;">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" name="location" value="{{ location }}" placeholder="    ">
+            <button type="submit">Get Weather and Pollution Data</button>
+        </form>
+
+        <!-- Current Weather Data -->
+        {% if weather %}
+        <h3>Current Weather in {{ location }}</h3>
+        <p><strong>Temperature:</strong> {{ weather.main.temp }}°F</p>
+        <p><strong>Condition:</strong> {{ weather.weather[0].description }}</p>
+        <p><strong>Humidity:</strong> {{ weather.main.humidity }}%</p>
+        {% endif %}
+
+        <!-- Air Pollution Data -->
+        {% if pollution and pollution.list %}
+        <h3>Air Pollution Levels in {{ location }}</h3>
+        <p><strong>CO:</strong> {{ pollution.list[0].components.co }} µg/m³</p>
+        <p><strong>NO₂:</strong> {{ pollution.list[0].components.no2 }} µg/m³</p>
+        <p><strong>PM₂.₅:</strong> {{ pollution.list[0].components.pm2_5 }} µg/m³</p>
+        {% endif %}
+    </div>
+    {% endif %}
 </body>
 </html>
