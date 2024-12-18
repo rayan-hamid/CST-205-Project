@@ -1,3 +1,13 @@
+<!-- 
+Course: CST-205
+Title: Carbon Footprint Calculator
+Abstract: This page allows users to calculate their carbon footprint based on different activities.
+Authors: Rayan Hamid
+Date: December 18, 2024
+Sources: 
+https://www.carboninterface.com/
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon Footprint Calculator</title>
 
-    <!-- Include Bootstrap CSS for styling -->
+    <!-- CSS Styling -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
@@ -38,13 +48,12 @@
     <header class="text-center bg-light py-4">
         <h1 class="text-success">Carbon Footprint Calculator</h1>
         <p class="text-secondary">Calculate your carbon emissions based on your activities.</p>
-        <!-- Display carbon image -->
         <div class="container">
             <img src="/static/images/carbon.jpg" alt="Carbon Footprint" class="img-fluid rounded shadow" style="max-height: 300px; object-fit: cover;">
         </div>
     </header>
 
-    <!-- Form Section for Carbon Calculation -->
+    <!-- User Input Form -->
     <main class="container mt-4">
         <form method="POST" action="/carbon" class="form-inline justify-content-center mb-4">
             <!-- Dropdown to select activity type -->
