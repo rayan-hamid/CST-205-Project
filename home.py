@@ -12,6 +12,19 @@ from wtforms import RadioField, SubmitField
 from wtforms.validators import InputRequired
 import requests
 
+"""
+Course: CST-205
+Title: Flask Routes for Landing Page
+Authors: Rian Hassett
+Date: December 18, 2024
+sources: https://www.carboninterface.com/
+Description: 
+This file I made (Rian Hassett) defines two Flask routes for the climate awareness web application:
+1. '/' route renders the home page, with an api displaying the weather ONLY in Seaside aswell as randomized quotes at the bottom everytime you refresh the page.
+2. '/resources' page I also made, it's just a page that provides links to other well renowned information websites on Climate Change, with clickable links using url_for
+
+"""
+
 om = openmeteo_requests.Client()
 params = {
     "latitude": 36.614906,
