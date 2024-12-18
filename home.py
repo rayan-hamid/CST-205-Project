@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 import random
 #API STUFF
 import openmeteo_requests
@@ -124,3 +124,42 @@ def quiz():
         responses.append(user_responses)
         return redirect('/submit')
     return render_template('test_your_knowledge.html', form=form)
+
+@app.route('/submit')
+def results():
+    answers = [
+        'Carbon emissions', 
+        'Warming of Earth due to trapped gases', 
+        'Using public transportation', 
+        'False', 
+        'Composting food scraps'
+    ]
+    
+    #GET THE MOST RECENT SUBMISSION 
+    user_responses = responses[-1]
+    score = 0
+
+    if user_responses.get('question_1') == answers[0]:
+        score += 1
+
+    if user_responses.get('question_2') == answers[1]:
+        score += 1
+
+    if user_responses.get('question_3') == answers[2]:
+        score += 1
+
+    if user_responses.get('question_4') == answers[3]:
+        score += 1
+
+    if user_responses.get('question_5') == answers[4]:
+        score += 1
+        
+    return render_template('submit.html', score=score)
+    
+
+# cd Desktop/cst205
+# source cst205env/bin/activate
+# cd project_solutions_page
+# flask --app solutions --debug run
+
+#must enter /solutions to see webpage 
