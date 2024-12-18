@@ -44,7 +44,26 @@ def effects():
 
 @app.route('/solutions')
 def solutions():
-    return render_template('solutions.html')
+    main_icon = 'main_icon'
+    bike_icon = 'bike_icon'
+    ev_icon = 'ev_icon'
+    food_icon = 'food_icon'
+    fruits_icon = 'fruits_icon'
+    house_icon = 'house_icon'
+    rrr_icon = 'rrr_icon'
+    solar_icon = 'solar_icon'
+    travel_icon = 'travel_icon'
+    return render_template('solutions.html', 
+                           main_icon=main_icon, 
+                           bike_icon=bike_icon, 
+                           ev_icon=ev_icon, 
+                           food_icon=food_icon, 
+                           fruits_icon=fruits_icon, 
+                           house_icon=house_icon, 
+                           rrr_icon=rrr_icon, 
+                           solar_icon=solar_icon, 
+                           travel_icon=travel_icon)
+
 
 @app.route('/resources')
 def resources():
