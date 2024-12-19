@@ -217,7 +217,19 @@ def carbon():
     # Render the carbon calculator page
     return render_template("carbon.html")
 
+"""
+Course: CST-205
+Title: Flask Routes for Solutions Page
+Authors: Ann Jojo
+Date: December 18, 2024
+sources: https://www.un.org/en/actnow/ten-actions#unplug
+Description: 
+This file I made defines three Flask routes (solutions and quiz page + submit page) for the climate awareness web application:
+1. '/solution' route renders the solutions page, with various solutoins for climate change anyone can implement. 
+2. '/test-your-knowledge' page I also made, it's a page that provides users with an oppertunity to test the knowlege you got from reading the solution. 
+3. '/submit' take you to a webpage that shows your score on the quiz. 
 
+"""
 
 @app.route('/solutions')
 def solutions():
