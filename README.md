@@ -29,7 +29,7 @@ This project is a comprehensive web application developed in Flask, aimed at rai
 - pip install requests
 - pip install openmeteo-sdk
 
-4. Run the application: flask --app home --debug run
+4. Run the application: flask --app home --debug rub
    - access the application at: http://127.0.0.1:5000/
 
 Link to GitHub Repository: https://github.com/rayan-hamid/CST-205-Project.git
